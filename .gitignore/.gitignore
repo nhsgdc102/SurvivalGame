@@ -1,9 +1,0 @@
-# Unreal Engine
-/*/Binaries/
-/*/Build/
-/*/Intermediate/
-/*/Saved/
-
-# Visual Studio
-/*/.vs/
-/*/*.sln

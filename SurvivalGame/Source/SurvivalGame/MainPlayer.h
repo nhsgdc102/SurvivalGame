@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright 2020 Northview High School Game Development Club
 
 #pragma once
 
@@ -6,6 +6,10 @@
 #include "BasicCharacter.h"
 #include "Components/InputComponent.h" //For binding inputs
 #include "Engine/World.h" //For get world delta seconds
+//Imports Weapon class
+#include "Weapon.h"
+//Imports ChildActorComponent
+#include "Components/ChildActorComponent.h"
 
 #include "MainPlayer.generated.h"
 
@@ -42,6 +46,20 @@ public:
 	void MoveRight(float input);
 	//Moves character forward
 	void MoveForward(float input);
+
+	//Fires off weapon
+	void FireWeapon();
+
+//Declaring Components
+public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+		//Used to fire bullets
+		UChildActorComponent* weaponComp; //Comp stands for component
+	static FName weaponName;
+	
+private:
+	// Called when health dips to 0
+	virtual void dieCharacter() override;
 
 private:
 	//Controls speed of turning -- can adjust using scale in Input Settings

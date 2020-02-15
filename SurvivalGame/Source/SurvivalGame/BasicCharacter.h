@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright 2020 Northview High School Game Development Club
 
 #pragma once
 
@@ -32,9 +32,12 @@ public:
 	//For increasing the character's health
 	void restoreHealth(float gain);
 
+	//For making the character die
+	virtual void dieCharacter(); /*Honestly couldn't think of a professional name*/
+
 public:
 	/*Write Code Here!*/
-	//Initialize health variable here (float type)
+	//Declare health variable here (float type)
 
 
 

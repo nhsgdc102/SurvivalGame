@@ -1,7 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright 2020 Northview High School Game Development Club
 
 
 #include "MainPlayer.h"
+
+FName AMainPlayer::weaponName("Weapon");
 
 // Sets default values
 AMainPlayer::AMainPlayer()
@@ -9,13 +11,12 @@ AMainPlayer::AMainPlayer()
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	//Setting up weapon component
+	weaponComp = CreateDefaultSubobject<UChildActorComponent>(AMainPlayer::weaponName);
+	weaponComp->SetChildActorClass(AWeapon::StaticClass());
+
 	defaultTurnRate = 10.f;
 	defaultSpeed = 10.f;
-
-	/*Write Code Here!*/
-	//Set initial values
-
-
 }
 
 // Called when the game starts or when spawned
@@ -44,6 +45,10 @@ void AMainPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 	//Setup inputs for the movement following the example above
 	//Bind MoveForward and MoveRight to axis inputs "Forward" and "Right", respectively
+
+	/*Write Code Here!*/
+
+	//Bind FireWeapon() to "Shoot" using the example above, but use BindAction instead of BindAxis
 }
 
 void AMainPlayer::LookYaw(float yaw)
@@ -70,4 +75,24 @@ void AMainPlayer::MoveRight(float input)
 
 	//Use AddMovementInput(GetActorRightVector(), /*Insert expression here*/)
 	//For the expression follow the examples above in LookYaw and LookPitch
+}
+
+void AMainPlayer::FireWeapon()
+{
+	AWeapon* weapon = Cast<AWeapon>(weaponComp->GetChildActor());
+	if (IsValid(weapon))
+	{
+		/*Write Code Here*/
+
+		//Use the weapon object to call FireBullet()
+		//To call a function using a pointer, use the arrow ->
+	}
+}
+
+//Overrides dieCharacter() in BasicCharacter
+void AMainPlayer::dieCharacter()
+{
+	//Finish function later
+	//Will need to end the game and do a variety of things
+
 }

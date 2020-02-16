@@ -8,7 +8,7 @@ public class SurvivalGame : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore"}); //Added AIModule to use AI functions in c++
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

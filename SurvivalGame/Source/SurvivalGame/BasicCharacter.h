@@ -35,7 +35,7 @@ public:
 public:
 	/*Write Code Here!*/
 	//Initialize health variable here (float type)
-
+	float health;
 
 
 };

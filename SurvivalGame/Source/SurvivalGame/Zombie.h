@@ -32,4 +32,8 @@ public:
 		//The amount added to the player's score when the zombie dies
 		int32 scoreAddition;
 	
+public:
+	UFUNCTION(BlueprintCallable)
+	float attackPlayer(float maxDamage, float minDamage);
+	
 };

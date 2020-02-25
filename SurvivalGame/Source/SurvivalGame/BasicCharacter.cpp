@@ -58,3 +58,9 @@ void ABasicCharacter::restoreHealth(float gain)
 	// FMath::Clamp<float>(/*Insert expression here*/,0.f, 100.f)
 	//Then set the result of the function above to health
 }
+
+void ABasicCharacter::dieCharacter()
+{
+	//This code is probably not sufficient for MainPlayer or Zombie objects so the function will need to be overrided
+	this->Destroy();
+}

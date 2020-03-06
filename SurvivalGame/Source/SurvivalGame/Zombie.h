@@ -8,6 +8,8 @@
 #include "SurvivalGameInstance.h"
 //Imports gameplay statics class for getting game instance
 #include "Kismet/GameplayStatics.h"
+//Imports character movement class for stopping movement
+#include "GameFramework/CharacterMovementComponent.h"
 
 #include "Zombie.generated.h"
 
@@ -31,9 +33,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		//The amount added to the player's score when the zombie dies
 		int32 scoreAddition;
-	
-public:
-	UFUNCTION(BlueprintCallable)
-	float attackPlayer(float maxDamage, float minDamage);
-	
+
+/*Write Code Here*/
+
+
+//Create a public float variable named attackPower. This is how much damage the zombie does every time it strike the main player. Give it UFUNCTION(BlueprintCallable)
+
+
+/*Write Code Here*/
+
+
+//Create a public boolean variable named bDead. Give it UFUNCTION(BlueprintCallable) so that it can be accessed from the Zombie_BP blueprint.
+//This variable will be used to determine if the hitboxes should be active
 };

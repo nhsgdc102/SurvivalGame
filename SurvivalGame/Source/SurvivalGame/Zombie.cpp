@@ -21,5 +21,11 @@ void AZombie::dieCharacter()
 	//Then use gameInstance to call addToScore(/*Insert scoreAddition here*/)
 		//To call functions from a pointer, use the arrow -> 
 
-	this->Destroy();
+
+	//Also set bDead equal to true
+	
+	GetCharacterMovement()->StopMovementImmediately(); //stops zombie from walking any longer
+	
+	//Use SetLifeSpan(float timeTillDeath) to set a timer for the zombie's death. Example-> SetLifeSpan(10.f);
 }
+

@@ -8,7 +8,7 @@ FName ABullet::hitboxName(TEXT("Hitbox")); //Sets the name inside hitboxName
 FName ABullet::meshName(TEXT("BulletMesh"));
 
 /*Write Code Here!*/
-
+FName ABullet::projCompName(TEXT("Bulletspeed"));
 
 /*Set the value of the name inside the projectile movement's name variable you declared using the examples above*/
 
@@ -39,14 +39,16 @@ ABullet::ABullet()
 
 	/*Write Code Here!*/
 	//Setting up projectile movement component -> write your code below
-	
+	projComp = CreateDefaultSubobject<UProjectileMovementComponent>(ABullet::projCompName);
+    
 	
 	/*Use the examples above to set up the projectile movement component.*/
 	//->Make sure to use the function CreateDefaultSubobject</*Insert class name here*/>(ABullet::/*Insert name variable here*/)
 	//->No need to set up attachments to root or anything else 
 
 	/*Write code here*/
-
+    damage = 5.f;
+    range = 999.f;
 
 	//Set the initial values of damage and range. Make sure both are positive
 }
@@ -55,7 +57,7 @@ ABullet::ABullet()
 void ABullet::BeginPlay()
 {
 	Super::BeginPlay();
-
+SetLifeSpan(range / (projComp->InitialSpeed));
 	/*Write code here*/
 
 

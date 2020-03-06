@@ -22,6 +22,7 @@ AWeapon::AWeapon()
 	weaponMesh->SetCastShadow(true); //Weapon should have a shadow
 
 	/*Write code here*/
+    ammo = 5;
 
 	//Set initial value of ammo
 }
@@ -50,6 +51,7 @@ bool AWeapon::FireBullet()
 		if (IsValid(bullet)) //Proceeds if spawn is successful
 		{
 			/*Write code here*/
+            ammo = ammo - 1;
 
 
 			//Decrement ammo or Set it equal to ammo - 1

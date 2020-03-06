@@ -42,12 +42,13 @@ void AMainPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAxis("Pitch", this, &AMainPlayer::LookPitch);
 
 	/*Write Code Here!*/
-
+    PlayerInputComponent->BindAxis("Forward", this, &AMainPlayer::MoveForward);
+    PlayerInputComponent->BindAxis("Right", this, &AMainPlayer::MoveRight);
 	//Setup inputs for the movement following the example above
 	//Bind MoveForward and MoveRight to axis inputs "Forward" and "Right", respectively
 
 	/*Write Code Here!*/
-
+    PlayerInputComponent->BindAction("Shoot", this, &AMainPlayer::FireWeapon);
 	//Bind FireWeapon() to "Shoot" using the example above, but use BindAction instead of BindAxis
 }
 
@@ -64,7 +65,7 @@ void AMainPlayer::LookPitch(float pitch)
 void AMainPlayer::MoveForward(float input)
 {
 	/*Write Code Here!*/
-
+    AddMovementInput(GetActorForwardVector(), input*defaultSpeed*GetWorld()->GetDeltaSeconds());
 	//Use AddMovementInput(GetActorForwardVector(), /*Insert expression here*/)
 	//For the expression follow the examples above in LookYaw and LookPitch
 }
@@ -72,7 +73,7 @@ void AMainPlayer::MoveForward(float input)
 void AMainPlayer::MoveRight(float input)
 {
 	/*Write Code Here!*/
-
+    AddMovementInput(GetActorRightVector(), input*defaultSpeed*GetWorld()->GetDeltaSeconds());
 	//Use AddMovementInput(GetActorRightVector(), /*Insert expression here*/)
 	//For the expression follow the examples above in LookYaw and LookPitch
 }
@@ -83,7 +84,7 @@ void AMainPlayer::FireWeapon()
 	if (IsValid(weapon))
 	{
 		/*Write Code Here*/
-
+        weapon->FireBullet();
 		//Use the weapon object to call FireBullet()
 		//To call a function using a pointer, use the arrow ->
 	}
@@ -94,5 +95,5 @@ void AMainPlayer::dieCharacter()
 {
 	//Finish function later
 	//Will need to end the game and do a variety of things
-
+    
 }

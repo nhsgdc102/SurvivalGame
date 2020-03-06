@@ -28,7 +28,7 @@ public:
 
 private:
 	/*Write code here*/
-
+    int32 score;
 
 	//Declare a variable of type int32 (equivalent to int) to store the score
 

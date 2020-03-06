@@ -54,7 +54,9 @@ public: //Always declare components as public so that you can access them from b
 	/*Write Code Here!*/
 	//Declare everything needed for the projectile movement component below
 
-
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+        UProjectileMovementComponent* projComp;
+    static FName projCompName;
 
 	/*Use the examples above to declare a pointer for the projectile movement component.
 	Here are some tips:

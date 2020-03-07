@@ -48,7 +48,7 @@ void AMainPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	//Bind MoveForward and MoveRight to axis inputs "Forward" and "Right", respectively
 
 	/*Write Code Here!*/
-    PlayerInputComponent->BindAction("Shoot", this, &AMainPlayer::FireWeapon);
+    PlayerInputComponent->BindAction("Shoot", IE_Pressed, this, &AMainPlayer::FireWeapon);
 	//Bind FireWeapon() to "Shoot" using the example above, but use BindAction instead of BindAxis
 }
 

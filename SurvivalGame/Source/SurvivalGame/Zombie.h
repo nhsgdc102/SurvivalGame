@@ -32,17 +32,21 @@ private:
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		//The amount added to the player's score when the zombie dies
-		int32 scoreAddition;
+        int32 scoreAddition;
+
+/*Write Code Here*/
+public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        float attackPower;
+
+//Create a public float variable named attackPower. This is how much damage the zombie does every time it strike the main player. Give it UPROPERTY(EditAnywhere, BlueprintReadWrite)
+public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        bool bDead;
 
 /*Write Code Here*/
 
 
-//Create a public float variable named attackPower. This is how much damage the zombie does every time it strike the main player. Give it UFUNCTION(BlueprintCallable)
-
-
-/*Write Code Here*/
-
-
-//Create a public boolean variable named bDead. Give it UFUNCTION(BlueprintCallable) so that it can be accessed from the Zombie_BP blueprint.
+//Create a public boolean variable named bDead. Give it UPROPERTY(EditAnywhere, BlueprintReadWrite) so that it can be accessed from the Zombie_BP blueprint.
 //This variable will be used to determine if the hitboxes should be active
 };

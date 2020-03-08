@@ -10,6 +10,10 @@
 #include "Components/StaticMeshComponent.h" 
 //Imports class for projectile movement component -- https://docs.unrealengine.com/en-US/API/Runtime/Engine/GameFramework/UProjectileMovementComponent/index.html
 #include "GameFramework/ProjectileMovementComponent.h"
+/*Write Code Here Eric!
+Write an include statement for the MainPlayer.h file.
+**This will let you call the OnHitSuccess method from the bullet class
+*/
 
 //Imports class for zombie so that bullet can inflict damage
 #include "Zombie.h"

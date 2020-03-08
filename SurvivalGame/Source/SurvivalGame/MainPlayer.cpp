@@ -83,12 +83,25 @@ void AMainPlayer::FireWeapon()
 	AWeapon* weapon = Cast<AWeapon>(weaponComp->GetChildActor());
 	if (IsValid(weapon))
 	{
+		/*Write Code Here Eric!
+		Change the FireBullet method call below to pass in a reference to the current object. 
+		**Use the "this" reserved word to get the reference
+		**This reference will be the actual parameter for the AActor* formal parameter you wrote in Weapon.h
+		*/
+
 		/*Write Code Here*/
         weapon->FireBullet();
 		//Use the weapon object to call FireBullet()
 		//To call a function using a pointer, use the arrow ->
 	}
 }
+
+/*Write Code Here Eric!
+Write an empty method definition for the OnHitSuccess method you created
+**Basically copy over the method signature but include "AMainPlayer::" before the name. This lets the compiler know what class to look in to match the definition to the declaration.
+**It will be empty for now, but later we will add additional code to make it functional. This will be the basic setup so that we can implement the Call of Duty hit marker mechanism.
+*/
+
 
 //Overrides dieCharacter() in BasicCharacter
 void AMainPlayer::dieCharacter()

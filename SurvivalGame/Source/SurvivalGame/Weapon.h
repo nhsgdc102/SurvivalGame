@@ -38,6 +38,12 @@ public:
 
 //Firing bullet
 public:
+	/*Write Code Here Eric!
+	Rewrite the method signature below to accept a pointer to an object of type AActor.
+	**Hint--Add a formal parameter. Make sure to name it "owner" for convenience.
+	http://www.infobrother.com/Tutorial/C++/C++_Pointer_Object
+	*/
+
 	//Spawns a bullet--returns true or false indicating if spawn was successful
 	bool FireBullet();
 

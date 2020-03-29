@@ -50,6 +50,14 @@ public:
 	//Fires off weapon
 	void FireWeapon();
 
+/*Write Code Here Eric!
+Declare a public void method named OnHitSuccess. It should accept no parameters.
+**This should be called when the spawned bullet successfully hits the zombie
+**To make a method public, write "public:" in the line above it.
+**Make sure to match my indentation above.
+*/
+
+
 //Declaring Components
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))

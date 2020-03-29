@@ -8,7 +8,7 @@ FName ABullet::hitboxName(TEXT("Hitbox")); //Sets the name inside hitboxName
 FName ABullet::meshName(TEXT("BulletMesh"));
 
 /*Write Code Here!*/
-
+FName ABullet::projCompName(TEXT("Bulletspeed"));
 
 /*Set the value of the name inside the projectile movement's name variable you declared using the examples above*/
 
@@ -39,14 +39,16 @@ ABullet::ABullet()
 
 	/*Write Code Here!*/
 	//Setting up projectile movement component -> write your code below
-	
+	projComp = CreateDefaultSubobject<UProjectileMovementComponent>(ABullet::projCompName);
+    
 	
 	/*Use the examples above to set up the projectile movement component.*/
 	//->Make sure to use the function CreateDefaultSubobject</*Insert class name here*/>(ABullet::/*Insert name variable here*/)
 	//->No need to set up attachments to root or anything else 
 
 	/*Write code here*/
-
+    damage = 5.f;
+    range = 999.f;
 
 	//Set the initial values of damage and range. Make sure both are positive
 }
@@ -55,7 +57,7 @@ ABullet::ABullet()
 void ABullet::BeginPlay()
 {
 	Super::BeginPlay();
-
+	SetLifeSpan(range / (projComp->InitialSpeed));
 	/*Write code here*/
 
 
@@ -77,5 +79,18 @@ void ABullet::OnHitboxHit(UPrimitiveComponent* HitComponent, AActor* OtherActor,
 	if (IsValid(zombie)) //Will only proceed to the code below if zombie is not NULL and OtherActor is of the Zombie class
 	{
 		zombie->applyDamage(damage);
+		
+		/*Write Code Here Eric!
+		You will need to call the main player's OnHitSuccess method from here.
+		First, use this->GetOwner() to get a reference to the owner of the bullet. Because you set the spawn parameter Owner to the main player object in Weapon.cpp,
+		the value of GetOwner() will be a reference to the main player. However, it will be a pointer of type AActor, so you cannot immediately access OnHitSuccess.
+		Like in the Card assignment where you casted the parameter Object obj to type Card using (Card) obj, you will need to cast the result of this->GetOwner().
+		The best way to do this in ue4 is to use a dynamic cast of the format: To* Cast<typename To, typename From>(From* Src)
+		**In this situation, To should be AMainPlayer, From should be AActor, and Src should be this->GetOwner()
+		Declare a pointer of type AMainPlayer and store the result of the cast to it. Check if it is valid, and then use it to call OnHitSuccess
+		**To check if a pointer to an object is valid, use IsValid(Insert pointer here). Follow the example above with checking if the variable zombie is valid
+		**Then to call a function from a pointer, use the "->" operator. This is used whenever accessing public members of pointers.
+		*/
+
 	}
 }

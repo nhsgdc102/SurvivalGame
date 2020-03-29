@@ -41,13 +41,12 @@ void ABasicCharacter::applyDamage(float damage)
 	/*Write Code Here!*/
 	health = FMath::Clamp<float>(health - damage, 0.f, 100.f);
 	//Subtract the amount specified in damage from health and clamp it between 0 and 100 using the function below
-	// FMath::Clamp<float>(/*Insert expression here*/,0.f, 100.f)
 	//Then set the result of the function above to health
 
 	/*Write Code Here!*/
 	//Uncomment the code below and then add what is needed
-	//if(/*Insert name of health variable*/ <= 0)
-	//	dieCharacter();
+    if(health <= 0)
+        dieCharacter();
 }
 
 void ABasicCharacter::restoreHealth(float gain)
@@ -55,7 +54,7 @@ void ABasicCharacter::restoreHealth(float gain)
 	/*Write Code Here!*/
 	health = FMath::Clamp<float>(health + gain, 0.f, 100.f);
 	//Add the amount specified in gain to health and clamp it between 0 and 100 using the function below
-	// FMath::Clamp<float>(/*Insert expression here*/,0.f, 100.f)
+
 	//Then set the result of the function above to health
 }
 

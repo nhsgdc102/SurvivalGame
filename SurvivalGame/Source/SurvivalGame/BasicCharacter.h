@@ -26,11 +26,13 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(BlueprintCallable)
 	//For decreasing the character's health
-	void applyDamage(float damage);
+		void applyDamage(float damage);
 
+	UFUNCTION(BlueprintCallable)
 	//For increasing the character's health
-	void restoreHealth(float gain);
+		void restoreHealth(float gain);
 
 	//For making the character die
 	virtual void dieCharacter(); /*Honestly couldn't think of a professional name*/

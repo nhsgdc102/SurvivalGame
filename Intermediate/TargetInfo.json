@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "SurvivalGame",
+			"Path": "C:\\Users\\Aneet\\Documents\\GitHub\\SurvivalGame\\Source\\SurvivalGame.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "SurvivalGameEditor",
+			"Path": "C:\\Users\\Aneet\\Documents\\GitHub\\SurvivalGame\\Source\\SurvivalGameEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
